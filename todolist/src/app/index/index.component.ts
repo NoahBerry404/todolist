@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../_services/user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-index',
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.css']
 })
-export class HomeComponent implements OnInit {
+export class IndexComponent implements OnInit {
   content?: string;
 
   constructor(private userService: UserService) { }

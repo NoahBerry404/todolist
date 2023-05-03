@@ -18,7 +18,7 @@ export class TokenStorageService {
     window.sessionStorage.setItem(TOKEN_KEY,token);
   }
 
-  public buildToken(): string | null {
+  public getToken(): string | null {
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
 
@@ -33,6 +33,4 @@ export class TokenStorageService {
       return JSON.parse(user);
     }
   }
-
-  return {};
 }
