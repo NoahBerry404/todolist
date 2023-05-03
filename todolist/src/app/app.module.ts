@@ -7,21 +7,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { IndexComponent } from './index/index.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 
-import { authInterceptorProviders } from './helpers/auth.interceptors';
+import { httpInterceptorProviders } from './_helpers/http.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    IndexComponent,
+    HomeComponent,
     ProfileComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
@@ -29,12 +28,11 @@ import { authInterceptorProviders } from './helpers/auth.interceptors';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
