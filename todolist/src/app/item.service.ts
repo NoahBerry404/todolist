@@ -12,7 +12,7 @@ export class ItemService {
   constructor(private http: HttpClient){}
 
   getItems(){
-    this.http.get<{message: string, items: Item[]}>('http://localhost:3000/api/posts').subscribe((itemData)=>{
+    this.http.get<{message: string, items: Item[]}>('http://137.184.152.154/api/get_items').subscribe((itemData)=>{
       this.items = itemData.items;
       this.itemUpdate.next([...this.items]);
     })
@@ -25,9 +25,9 @@ export class ItemService {
     return this.itemUpdate.asObservable();
   }
 
-  addItem(title: string, description: string, priority: number){
+  addItem(title: string, description: string){
     console.log("addPost() function");
-    const item: Item = {title: title, description: description, priority: priority};
+    const item: Item = {title: title, description: description};
     console.log(this.items);
     this.items.push(item);
     this.itemUpdate.next([...this.items]);

@@ -15,10 +15,6 @@
               <textarea matInput type="text" class="form-control" name="body" placeholder="Enter Description Here" rows="3" ngModel required minlength="1" #description="ngModel"></textarea>
               <mat-error *ngIf="description.invalid">Please Enter A Description</mat-error>
             </mat-form-field>
-            <mat-form-field class="form-group d-inline">
-              <input matInput type="text" class="form-control" name="body" placeholder="Enter Priority Here" rows="1" ngModel required minlength="1" #priority="ngModel">
-              <mat-error *ngIf="priority.invalid">Please Enter A Priority</mat-error>
-            </mat-form-field>
             <div>
               <button mat-raised-button class="btn btn-info" type="submit">Add Item</button>
             </div>
