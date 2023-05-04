@@ -15,7 +15,7 @@ export class AddItemComponent {
     if(form.invalid){
       return;
     }
-    this.ItemService.addItem(form.value.title,form.value.description);
+    this.ItemService.addItem(form.value.title,form.value.description,form.value.date);
     form.resetForm();
   }
 }

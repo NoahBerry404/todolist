@@ -18,7 +18,7 @@ export class ViewListComponent implements OnInit, OnDestroy {
   constructor(public ItemService: ItemService) {}
 
   ngOnInit(){
-    this.items = this.ItemService.getItems();
+    this.ItemService.getItems();
     this.itemsSub = this.ItemService.getItemUpdateListener().subscribe((items: Item[])=>{
       this.items = items
       this.count = items.length;

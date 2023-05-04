@@ -12,8 +12,12 @@
               <mat-error *ngIf="title.invalid">Please Enter A Title</mat-error>
             </mat-form-field>
             <mat-form-field class="form-group d-inline">
-              <textarea matInput type="text" class="form-control" name="body" placeholder="Enter Description Here" rows="3" ngModel required minlength="1" #description="ngModel"></textarea>
+              <textarea matInput type="text" class="form-control" name="description" placeholder="Enter Description Here" rows="3" ngModel required minlength="1" #description="ngModel"></textarea>
               <mat-error *ngIf="description.invalid">Please Enter A Description</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-group d-inline">
+              <input matInput type="text" class="form-control" name="date" placeholder="Date in Format: YYYY-MM-DD" rows="1" ngModel required minlength="1" #date="ngModel">
+              <mat-error *ngIf="date.invalid">Please Enter A Date</mat-error>
             </mat-form-field>
             <div>
               <button mat-raised-button class="btn btn-info" type="submit">Add Item</button>

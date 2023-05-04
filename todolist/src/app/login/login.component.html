@@ -7,16 +7,16 @@
         </mat-card-header>
         <mat-card-content>
           <mat-form-field class="form-group d-inline">
-            <input matInput type="text" class="form-control" name="title" placeholder="Enter Username Here" rows="1" ngModel required minlength="1" #username="ngModel">
+            <input matInput type="text" class="form-control" name="username" placeholder="Enter Username Here" rows="1" ngModel required minlength="1" #username="ngModel">
             <mat-error *ngIf="username.invalid">Please Enter A Username</mat-error>
           </mat-form-field>
           <mat-form-field class="form-group d-inline">
-            <input matInput type="text" class="form-control" name="body" placeholder="Enter Password Here" rows="1" ngModel required minlength="1" #password="ngModel">
+            <input matInput type="text" class="form-control" name="password" placeholder="Enter Password Here" rows="1" ngModel required minlength="1" #password="ngModel">
             <mat-error *ngIf="password.invalid">Please Enter A Password</mat-error>
           </mat-form-field>
           <p>Not a member? <a href="/register">Join Us</a></p>
           <div>
-            <button mat-raised-button class="btn btn-info" type="submit">Register</button>
+            <button mat-raised-button class="btn btn-info" type="submit">Login</button>
           </div>
         </mat-card-content>
       </form>
