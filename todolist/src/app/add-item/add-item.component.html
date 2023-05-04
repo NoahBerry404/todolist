@@ -23,3 +23,28 @@
     </form>
   </div>
 </body>
+
+<mat-card id="card">
+  <form (submit)="onAddItem(itemForm)" #itemForm = "ngForm">
+    <mat-card-header>
+      <mat-card-title>Create Post</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput type="text" name="title" placeholder="Enter Title Here" rows="1" ngModel required minlength="1" #title="ngModel">
+        <mat-error *ngIf="title.invalid">Please Enter A Title</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput type="text" name="body" placeholder="Enter Description Here" rows="3" ngModel required minlength="1" #description="ngModel"></textarea>
+        <mat-error *ngIf="description.invalid">Please Enter A Description</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput type="text" name="body" placeholder="Enter Priority Here" rows="3" ngModel required minlength="1" #priority="ngModel"></textarea>
+        <mat-error *ngIf="priority.invalid">Please Enter A Priority</mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="accent" type="submit">Submit Post</button>
+      </div>
+    </mat-card-content>
+  </form>
+</mat-card>
