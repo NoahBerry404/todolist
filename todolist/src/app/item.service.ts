@@ -5,7 +5,7 @@ import { Item } from "./item.model";
 
 @Injectable({providedIn: 'root'})
 
-export class PostService {
+export class ItemService {
   private items: Item[] = [];
   private itemUpdate = new Subject<Item[]>();
 
@@ -13,7 +13,7 @@ export class PostService {
 
   getItems(){
     this.http.get<{message: string, items: Item[]}>('http://localhost:3000/api/posts').subscribe((itemData)=>{
-      this.item = itemData.items;
+      this.items = itemData.items;
       this.itemUpdate.next([...this.items]);
     })
     console.log("getPosts() function");
@@ -21,22 +21,15 @@ export class PostService {
     return [...this.items];
   }
 
-  getPostUpdateListener(){
+  getItemUpdateListener(){
     return this.itemUpdate.asObservable();
   }
 
-  addPost(title: string, description: string, priority: number){
+  addItem(title: string, description: string, priority: number){
     console.log("addPost() function");
     const item: Item = {title: title, description: description, priority: priority};
     console.log(this.items);
     this.items.push(item);
     this.itemUpdate.next([...this.items]);
   }
-}
-@Injectable({
-  providedIn: 'root'
-})
-export class ItemService {
-
-  constructor() { }
 }

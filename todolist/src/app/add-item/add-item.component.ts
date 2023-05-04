@@ -10,7 +10,7 @@ import { Item } from '../item.model';
 })
 export class AddItemComponent {
   pawprint = "Drew Clutes, AACK2F";
-  constructor(public ItemServive: ItemService){}
+  constructor(public ItemService: ItemService){}
   onAddItem(form: NgForm){
     if(form.invalid){
       return;
