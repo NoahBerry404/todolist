@@ -1,52 +1,30 @@
-<!--<body class="bg-info">
-  <div class="m-6" id="login">
-    <form action="/add-item" method="POST">
-        <div class="container col-md-6 p-3 bg-white rounded-2">
-            <h1 id="addItemTitle">Add Item to List</h1>
-            <div class="form-group">
-                <label for="title">Item Title: </label>
-                <input type="text" class="form-control" placeholder="Item Title" name="title" required>
+<body class="bg-info">
+  <div class="p-3">
+    <mat-card id="card" class="container col-md-6 bg-white rounded-2">
+      <form (submit)="onAddItem(itemForm)" #itemForm = "ngForm">
+        <div class="">
+          <mat-card-header>
+            <mat-card-title>Add Item</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-form-field class="form-group d-inline">
+              <input matInput type="text" class="form-control" name="title" placeholder="Enter Title Here" rows="1" ngModel required minlength="1" #title="ngModel">
+              <mat-error *ngIf="title.invalid">Please Enter A Title</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-group d-inline">
+              <textarea matInput type="text" class="form-control" name="body" placeholder="Enter Description Here" rows="3" ngModel required minlength="1" #description="ngModel"></textarea>
+              <mat-error *ngIf="description.invalid">Please Enter A Description</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-group d-inline">
+              <input matInput type="text" class="form-control" name="body" placeholder="Enter Priority Here" rows="1" ngModel required minlength="1" #priority="ngModel">
+              <mat-error *ngIf="priority.invalid">Please Enter A Priority</mat-error>
+            </mat-form-field>
+            <div>
+              <button mat-raised-button class="btn btn-info" type="submit">Add Item</button>
             </div>
-            <div class="form-group">
-                <label for="description">Item Description: </label>
-                <input type="text" class="form-control" placeholder="Item Description" name="description" required>
-            </div>
-            <div class="form-group">
-              <label for="priority">Item Priority: </label>
-              <input type="text" class="form-control" placeholder="Item Priority from 1-5" name="priority" required>
-            </div>
-            <p>Want to see your List? <a href="/view-list">View List</a></p>
-            <div class="loginbutton">
-                <button class="btn btn-info" formaction="/add-item" type="submit">Add Item</button>
-            </div>
+          </mat-card-content>
         </div>
-    </form>
+      </form>
+    </mat-card>
   </div>
-</body> -->
-<h1>TEST</h1>
-<!--
-<mat-card id="card">
-  <form (submit)="onAddItem(itemForm)" #itemForm = "ngForm">
-    <mat-card-header>
-      <mat-card-title>Create Post</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-form-field>
-        <input matInput type="text" name="title" placeholder="Enter Title Here" rows="1" ngModel required minlength="1" #title="ngModel">
-        <mat-error *ngIf="title.invalid">Please Enter A Title</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea matInput type="text" name="body" placeholder="Enter Description Here" rows="3" ngModel required minlength="1" #description="ngModel"></textarea>
-        <mat-error *ngIf="description.invalid">Please Enter A Description</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <textarea matInput type="text" name="body" placeholder="Enter Priority Here" rows="3" ngModel required minlength="1" #priority="ngModel"></textarea>
-        <mat-error *ngIf="priority.invalid">Please Enter A Priority</mat-error>
-      </mat-form-field>
-      <div>
-        <button mat-raised-button color="accent" type="submit">Submit Post</button>
-      </div>
-    </mat-card-content>
-  </form>
-</mat-card>
--->
+</body>

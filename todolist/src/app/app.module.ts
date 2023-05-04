@@ -19,6 +19,7 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Subscription, Subject, Observable } from 'rxjs';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -33,6 +34,7 @@ import { RouterModule } from '@angular/router';
     AddItemComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,

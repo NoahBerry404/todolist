@@ -1,18 +1,22 @@
-<mat-card>
-  <mat-card-content>
-    <mat-card-title count="post.length">Items: {{count}}</mat-card-title>
-    <mat-accordion *ngIf="items.length == 0">
-      <hr>
-      <p>No Content</p>
-    </mat-accordion>
-    <mat-accordion *ngIf="items.length > 0">
-      <mat-expansion-panel *ngFor="let item of items" [hideToggle]="false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>{{item.title}}</mat-panel-title>
-        </mat-expansion-panel-header>
-        {{item.description}}
-        {{item.priority}}
-      </mat-expansion-panel>
-    </mat-accordion>
-  </mat-card-content>
-</mat-card>
+<body class="bg-info">
+  <div class="p-3">
+    <mat-card class="container col-md-6 bg-white rounded-2 p-5">
+      <mat-card-content>
+        <mat-card-title count="post.length">Items: {{count}}</mat-card-title>
+        <mat-accordion *ngIf="items.length == 0">
+          <hr>
+          <p>No Content</p>
+        </mat-accordion>
+        <mat-accordion *ngIf="items.length > 0">
+          <mat-expansion-panel *ngFor="let item of items" [hideToggle]="false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{item.title}}</mat-panel-title>
+            </mat-expansion-panel-header>
+            {{item.description}}
+            {{item.priority}}
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</body>
