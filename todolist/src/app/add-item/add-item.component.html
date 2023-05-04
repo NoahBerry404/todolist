@@ -1,0 +1,25 @@
+<body class="bg-info">
+  <div class="m-6" id="login">
+    <form action="/add-item" method="POST">
+        <div class="container col-md-6 p-3 bg-white rounded-2">
+            <h1 id="addItemTitle">Add Item to List</h1>
+            <div class="form-group">
+                <label for="title">Item Title: </label>
+                <input type="text" class="form-control" placeholder="Item Title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Item Description: </label>
+                <input type="text" class="form-control" placeholder="Item Description" name="description" required>
+            </div>
+            <div class="form-group">
+              <label for="priority">Item Priority: </label>
+              <input type="text" class="form-control" placeholder="Item Priority from 1-5" name="priority" required>
+            </div>
+            <p>Want to see your List? <a href="/view-list">View List</a></p>
+            <div class="loginbutton">
+                <button class="btn btn-info" formaction="/add-item" type="submit">Add Item</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</body>

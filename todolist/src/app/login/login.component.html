@@ -1,0 +1,19 @@
+<section class="mt-6 bg-info" id="login">
+  <form action="/login" method="POST">
+      <div class="container col-md-6 p-3 bg-white rounded-2">
+          <h1 id="loginTitle">Login</h1>
+          <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="text" class="form-control" placeholder="Enter your email" name="email" required>
+          </div>
+          <div class="form-group">
+              <label for="password">Password: </label>
+              <input type="text" class="form-control" placeholder="Enter your password" name="password" required>
+          </div>
+          <p>Not a member yet? <a href="/register">Join Us</a></p>
+          <div class="loginbutton">
+              <button class="btn btn-info" formaction="/login" type="submit">Login</button>
+          </div>
+      </div>
+  </form>
+</section>
